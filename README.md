@@ -1,27 +1,46 @@
-# React + TypeScript + Vite
+# Project Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Before running the project, make sure you have the following dependencies installed:
 
-Currently, two official plugins are available:
+-   Node.js (v18.16.1)
+-   Yarn (v3.6.1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check your Node.js and Yarn versions to ensure they meet the project's requirements. Open your terminal and run:
 
-## Expanding the ESLint configuration
+```shell
+node -v
+# 18.16.1
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+yarn -v
+# 3.6.1
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Getting Started
+
+Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/ashik-75/ollyo-assesment.git
+```
+
+## Navigate to the project directory
+
+```bash
+cd ollyo-assesment
+```
+
+## Installation
+
+Install project dependencies using Yarn 
+
+```shell
+yarn install
+```
+
+# Running the Project
+
+To run the project locally, execute the following command:
+
+```shell
+yarn dev
+```
