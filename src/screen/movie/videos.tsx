@@ -4,12 +4,7 @@ import Spinner from "@/components/ui/Spinner";
 import { useFetch } from "@/utils/movie";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-	Modal,
-	ModalBody,
-	ModalContent,
-	useDisclosure,
-} from "@nextui-org/react";
+import { Modal, ModalContent, useDisclosure } from "@nextui-org/react";
 import ReactPlayer from "react-player";
 
 const Videos: React.FC = () => {

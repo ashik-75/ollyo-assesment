@@ -1,13 +1,15 @@
 import Carousel from "@/components/ui/Carousel";
 import LazyImage from "@/components/ui/LazyImage";
 import Spinner from "@/components/ui/Spinner";
-import { useFetch } from "@/utils/movie";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { useMovies } from "../../api/getMovies";
 
 const SimilarMovies: React.FC = () => {
 	const { movieId } = useParams();
-	const { data, isLoading, isError } = useFetch(`movie/${movieId}/similar`);
+	const { data, isLoading } = useMovies({
+		endpoint: `movie/${movieId}/similar`,
+	});
 
 	if (isLoading) {
 		return <Spinner />;
@@ -17,7 +19,7 @@ const SimilarMovies: React.FC = () => {
 		<>
 			<h1 className="font-bold mb-5 text-2xl">Similiar Movies</h1>
 			<Carousel>
-				{data.results.map((cast: any) => (
+				{data?.results.map((cast: any) => (
 					<div key={cast.id}>
 						<Link to={`/movie/${cast.id}`}>
 							{cast.poster_path === null ? (

@@ -1,13 +1,15 @@
 import React from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
-import Discover from "./screen/discover";
+
 import NotFound from "./screen/not-found";
 import { ErrorBoundary } from "react-error-boundary";
 import FullPageErrorFallback from "./components/FullPageErrorFallback";
 import ErrorMessage from "./components/ErrorMessage";
-import Movie from "./screen/movie";
+
 import FavouriteList from "./screen/favourite-list";
 import WatchList from "./screen/watch-list";
+import Movie from "./features/movie/routes/movie";
+import Discover from "./features/movie/routes/discover";
 
 interface ErrorFallbackProps {
 	error: Error;
@@ -44,7 +46,7 @@ const Navbar = () => {
 	return (
 		<nav
 			id="navbar"
-			className="flex items-center justify-between p-5 bg-zinc-100 sticky top-0"
+			className="flex items-center justify-between p-5 bg-zinc-100 sticky top-0 z-30"
 		>
 			<div>
 				<img src="/amd.png" className="w-10 h-10" alt="" />
