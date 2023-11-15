@@ -1,6 +1,6 @@
 import React from "react";
-import PopularMovies from "./popular-movies";
-import TrendingMovies from "./trending-movies";
+import PopularMovies from "./section/popular-movies";
+import TrendingMovies from "./section/trending-movies";
 
 const Discover: React.FC = () => {
 	return (

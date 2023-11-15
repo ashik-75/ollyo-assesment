@@ -4,19 +4,18 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import NotFound from "./screen/not-found";
 import { ErrorBoundary } from "react-error-boundary";
 import FullPageErrorFallback from "./components/FullPageErrorFallback";
-import ErrorMessage from "./components/ErrorMessage";
-
-import FavouriteList from "./screen/favourite-list";
-import WatchList from "./screen/watch-list";
+import WatchList from "./features/movie/routes/watchlist";
 import Movie from "./features/movie/routes/movie";
 import Discover from "./features/movie/routes/discover";
+import ErrorMessage from "./components/ui/ErrorMessage";
+import FavouriteList from "./features/movie/routes/favourite";
 
 interface ErrorFallbackProps {
 	error: Error;
 }
 
 const ErrorFallBack: React.FC<ErrorFallbackProps> = ({ error }) => {
-	return <ErrorMessage error={error} />;
+	return <ErrorMessage message={error.message} />;
 };
 
 const AuthenticatedApp: React.FC = () => {
