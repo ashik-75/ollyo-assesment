@@ -1,8 +1,9 @@
 import React, { FormEvent } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const SearchBar: React.FC = () => {
-	const [, setSearch] = useSearchParams({ q: "vab" });
+	const navigate = useNavigate();
+	const [searchParams, setSearch] = useSearchParams({ q: "vab" });
 
 	const handleSearch = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -13,10 +14,11 @@ const SearchBar: React.FC = () => {
 				prev.set("q", inp.value);
 				return prev;
 			});
+			navigate("/search?" + searchParams.toString());
 		}
 	};
 	return (
-		<div>
+		<div className="flex-1">
 			<form onSubmit={handleSearch}>
 				<input
 					type="search"

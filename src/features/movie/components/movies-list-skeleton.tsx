@@ -5,7 +5,7 @@ const MoviesListSkeleton: React.FC = () => {
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-4 md:gap-5">
 			{[...Array(4).keys()].map((n) => (
-				<MovieSkeleton />
+				<MovieSkeleton key={n} />
 			))}
 		</div>
 	);

@@ -1,15 +1,11 @@
-import { Suspense, lazy, useState } from "react";
-import FullPageLoader from "./components/FullPageLoader";
-
-const AuthenticatedApp = lazy(() => import("./authenticated-app"));
-const UnAuthenticatedApp = lazy(() => import("./unauthenticated-app"));
+import AppProviders from "./providers/app";
+import AppRoutes from "./routes";
 
 const App = () => {
-	const [user, setUser] = useState(true);
 	return (
-		<Suspense fallback={<FullPageLoader />}>
-			{user ? <AuthenticatedApp /> : <UnAuthenticatedApp />}
-		</Suspense>
+		<AppProviders>
+			<AppRoutes />
+		</AppProviders>
 	);
 };
 

@@ -714,6 +714,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "@hookform/resolvers@npm:3.3.2"
+  peerDependencies:
+    react-hook-form: ^7.0.0
+  checksum: bcaefe2a8a212b015b3ea99c93d7ecb5c8f475606d83be9d82dc6cc0cbb3cda03f7fd7a4426688c2de29b6800b93adbf9abb932a1dafee1d053dcaa69ec13f3f
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.13":
   version: 0.11.13
   resolution: "@humanwhocodes/config-array@npm:0.11.13"
@@ -6345,6 +6354,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ollyo@workspace:."
   dependencies:
+    "@hookform/resolvers": ^3.3.2
     "@nextui-org/react": ^2.2.8
     "@tanstack/react-query": ^5.7.2
     "@testing-library/jest-dom": ^6.1.4
@@ -6369,6 +6379,7 @@ __metadata:
     react-dom: ^18.2.0
     react-easy-sort: ^1.6.0
     react-error-boundary: ^4.0.11
+    react-hook-form: ^7.48.2
     react-lazy-load-image-component: ^1.6.0
     react-player: ^2.13.0
     react-router-dom: ^6.18.0
@@ -6378,6 +6389,7 @@ __metadata:
     typescript: ^5.0.2
     vite: ^4.4.5
     vitest: ^0.34.6
+    zod: ^3.22.4
     zustand: ^4.4.6
   languageName: unknown
   linkType: soft
@@ -6763,6 +6775,15 @@ __metadata:
   version: 3.2.2
   resolution: "react-fast-compare@npm:3.2.2"
   checksum: 2071415b4f76a3e6b55c84611c4d24dcb12ffc85811a2840b5a3f1ff2d1a99be1020d9437ee7c6e024c9f4cbb84ceb35e48cf84f28fcb00265ad2dfdd3947704
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.48.2":
+  version: 7.48.2
+  resolution: "react-hook-form@npm:7.48.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 39652d08f78f16e5234049ceeb794d8bcd4d146772aca99c6db8c5aea8926cd4a230d02098886a441074deefbc24ffcb5ed57bc7cb0009d950115f5b3e627f12
   languageName: node
   linkType: hard
 
@@ -8201,6 +8222,13 @@ __metadata:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 2cac84540f65c64ccc1683c267edce396b26b1e931aa429660aefac8fbe0188167b7aee815a3c22fa59a28a58d898d1a2b1825048f834d8d629f4c2a5d443801
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.4":
+  version: 3.22.4
+  resolution: "zod@npm:3.22.4"
+  checksum: 80bfd7f8039b24fddeb0718a2ec7c02aa9856e4838d6aa4864335a047b6b37a3273b191ef335bf0b2002e5c514ef261ffcda5a589fb084a48c336ffc4cdbab7f
   languageName: node
   linkType: hard
 
