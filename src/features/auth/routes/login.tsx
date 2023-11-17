@@ -4,6 +4,10 @@ import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import ErrorLabel from "@/components/ui/error-label";
+import { useLogin } from "../api/login";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "@/store/user";
+import { User } from "../types";
 
 const schema = z.object({
 	name: z.string().min(5).max(20),
@@ -11,14 +15,19 @@ const schema = z.object({
 		.string()
 		.min(8, { message: "Minimum 8 char" })
 		.max(20, { message: "Maximum 20 char" }),
-	role: z.enum(["admin", "user"], {
-		errorMap: () => ({ message: "only ADMIN | USER approved" }),
-	}),
 });
 
-type FormDataType = z.infer<typeof schema>;
+export type FormDataType = z.infer<typeof schema>;
 
 const Login: React.FC = () => {
+	const onSuccess = (user: User) => {
+		navigate("/");
+		addUser(user);
+	};
+
+	const navigate = useNavigate();
+	const { addUser } = useUser();
+	const { mutate, isPending } = useLogin({ onSuccess });
 	const {
 		handleSubmit,
 		register,
@@ -28,8 +37,10 @@ const Login: React.FC = () => {
 	});
 
 	const onSubmit = (data: FormDataType) => {
-		console.log({ data });
+		// console.log({ data });
+		mutate(data);
 	};
+
 	return (
 		<div>
 			<form onSubmit={handleSubmit(onSubmit)} className="max-w-md space-y-3">
@@ -41,12 +52,13 @@ const Login: React.FC = () => {
 					<Input {...register("email")} placeholder="email ..." type="email" />
 					<ErrorLabel message={errors?.email?.message} />
 				</div>
-				<div>
-					<Input {...register("role")} placeholder="role ..." />
-					<ErrorLabel message={errors?.role?.message} />
-				</div>
 
-				<Button type="submit" variant="bordered" color="secondary">
+				<Button
+					isLoading={isPending}
+					type="submit"
+					variant="bordered"
+					color="secondary"
+				>
 					Login
 				</Button>
 			</form>

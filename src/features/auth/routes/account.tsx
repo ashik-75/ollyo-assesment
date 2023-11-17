@@ -4,6 +4,7 @@ import React from "react";
 
 const Account: React.FC = () => {
 	const { user, removeUser } = useUser();
+
 	return (
 		<div>
 			<p>Name: {user?.name}</p>

@@ -1,7 +1,8 @@
 import Login from "@/features/auth/routes/login";
+import Register from "@/features/auth/routes/register";
 import React from "react";
 
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 const UnAuthenticatedApp: React.FC = () => {
 	return (
@@ -17,6 +18,8 @@ const UnAuthenticatedRoutes = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<Login />} />
+			<Route path="/register" element={<Register />} />
+			<Route path="*" element={<Navigate to={"/"} />} />
 		</Routes>
 	);
 };
